@@ -6,6 +6,7 @@ const titleEl = document.getElementById("title");
 const meaningEl = document.getElementById("meaning");
 const exampleEl = document.getElementById("example");
 const audioEl = document.getElementById("audio");
+const enterBtn = document.getElementById("enter-button");
 
 async function fetchAPI(word) {
 
@@ -62,11 +63,22 @@ inputEl.addEventListener("keyup", (e) => {
         if (e.target.value.trim() !== "") {
             fetchAPI(e.target.value);
         } else {
-            inputEl.value = "";
-            infoTxtEl.style.display = "none";
-            meaningContainerEl.style.display = "none";
-            exampleEl.innerText = "";
-            audioEl.src = "";
+            clearDisplay();
         }
     }
 });
+
+enterBtn.addEventListener("click", () => {
+    if (inputEl.value.trim() !== "") {
+        fetchAPI(inputEl.value);
+    } else {
+        clearDisplay();
+    }
+});
+
+function clearDisplay() {
+    inputEl.value = "";
+    meaningContainerEl.style.display = "none";
+    exampleEl.innerText = "";
+    audioEl.src = "";
+}

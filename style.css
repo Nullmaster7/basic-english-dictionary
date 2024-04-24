@@ -14,6 +14,7 @@ body{
     border-radius: 7px;
     box-shadow: 0 10px 10px rgba(0,0,0,.3);
     width: 90%;
+    text-align: left;
     margin: 15px;
     max-width: 450px;
     text-align: center;
@@ -41,4 +42,14 @@ body{
 
 .title{
     font-weight: bold;
+    text-align: left;
+}
+
+.enter-button{
+    box-shadow: 0 10px 10px rgba(0,0,0,.3);
+    margin-top: 15px;
+    width: 30%;
+    padding: 5px;
+    position: relative ;
+    border-radius: 7px;
 }
